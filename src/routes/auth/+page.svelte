@@ -115,7 +115,7 @@
 		await setSessionUser(sessionUser);
 	};
 
-	let onboarding = false;
+	let onboarding = false; // Always hide onboarding by default
 
 	async function setLogoImage() {
 		await tick();
@@ -161,14 +161,14 @@
 		{`${$WEBUI_NAME}`}
 	</title>
 </svelte:head>
-
+<!--
 <OnBoarding
 	bind:show={onboarding}
 	getStartedHandler={() => {
 		onboarding = false;
 		mode = $config?.features.enable_ldap ? 'ldap' : 'signup';
 	}}
-/>
+/> -->
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
 	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
@@ -176,7 +176,7 @@
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
 	{#if loaded}
-		
+
 
 		<div
 			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-black dark:text-white"
